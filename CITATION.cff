@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Citation information for the accompanying mathematical preprint."
+title: "Images of Multilinear Polynomials with a Standard-Polynomial Unit Specialization"
+authors:
+  - family-names: "Miah"
+    given-names: "Y. T."
+preferred-citation:
+  type: article
+  title: "Images of Multilinear Polynomials with a Standard-Polynomial Unit Specialization"
+  authors:
+    - family-names: "Miah"
+      given-names: "Y. T."
+  year: 2026

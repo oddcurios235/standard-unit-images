@@ -1,0 +1,50 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{AL1950}
+A.~S. Amitsur and J.~Levitzki, \emph{Minimal identities for algebras}, Proc.
+  Amer. Math. Soc. \textbf{1} (1950), 449--463,
+  \doi{10.1090/S0002-9939-1950-0036751-9}.
+
+\bibitem{KBRY2020}
+Alexei Kanel-Belov, Sergey Malev, Louis Rowen, and Roman Yavich,
+  \emph{Evaluations of noncommutative polynomials on algebras: Methods and
+  problems, and the {L'vov--Kaplansky} conjecture}, SIGMA \textbf{16} (2020),
+  071, \doi{10.3842/SIGMA.2020.071}.
+
+\bibitem{Leron1973}
+Uri Leron, \emph{Multilinear identities of the matrix ring}, Trans. Amer. Math.
+  Soc. \textbf{183} (1973), 175--202, \doi{10.1090/S0002-9947-1973-0332873-3}.
+
+\bibitem{Miah2026Standard}
+Y.~T. Miah, \emph{The {L'vov--Kaplansky} conjecture for standard polynomials},
+  Hexagon preprint \href{https://hexagonmath.org/2611.00184v1}{2611.00184v1},
+  2026, \doi{10.5281/zenodo.24031055}.
+
+\bibitem{Pan2026}
+Shengyong Pan, \emph{The {L'vov--Kaplansky} conjecture for multilinear
+  polynomials of degrees four to six}, Hexagon preprint
+  \href{https://hexagonmath.org/2611.00173v1}{2611.00173v1}, 2026.
+
+\bibitem{Rowen1974}
+Louis~H. Rowen, \emph{Standard polynomials in matrix algebras}, Trans. Amer.
+  Math. Soc. \textbf{190} (1974), 253--284,
+  \doi{10.1090/S0002-9947-1974-0349715-3}.
+
+\bibitem{Serre2016}
+Denis Serre, \emph{Non-commutative standard polynomials applied to matrices},
+  Linear Algebra and its Applications \textbf{490} (2016), 202--223,
+  \doi{10.1016/j.laa.2015.11.003}.
+
+\bibitem{Tang2026}
+Qiyue Tang, \emph{The {L'vov--Kaplansky} conjecture in degrees five and six},
+  aiXiv preprint \href{https://aixiv.online/abs/2611.00692}{2611.00692v1},
+  2026.
+
+\end{thebibliography}

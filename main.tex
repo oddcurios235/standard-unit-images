@@ -1,0 +1,328 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdfauthor={Y. T. Miah},pdftitle={Images of Multilinear Polynomials with a Standard-Polynomial Unit Specialization},pdfsubject={Multilinear polynomial images of matrix algebras},pdfkeywords={L'vov--Kaplansky conjecture; multilinear polynomials; standard polynomial; matrix image; polynomial identities}}
+\urlstyle{same}
+\newcommand{\M}{M_n(K)}
+\newcommand{\slie}{\mathfrak{sl}_n(K)}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Id}{I}
+\newcommand{\Mat}[1]{M_{#1}(K)}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\textup{doi: #1}}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\title[Multilinear images with a standard-polynomial specialization]{Images of Multilinear Polynomials with a Standard-Polynomial Unit Specialization}
+\author{Y. T. Miah}
+\date{8 November 2026}
+\subjclass[2020]{Primary 16R10; Secondary 15A24, 16R30}
+\keywords{L'vov--Kaplansky conjecture, multilinear polynomial, standard polynomial, matrix polynomial image, matrix identities, regular differential}
+\begin{document}
+\begin{abstract}
+For $r=3,4,5$, consider an ordinary multilinear polynomial
+$f(Y,X_1,\ldots,X_{2r})$ whose specialization at $Y=I$ is a nonzero
+scalar multiple of the standard polynomial $s_{2r}$.  Over an
+algebraically closed field $K$ of characteristic zero, we prove that
+for every $n\ge r+1$ the set of its individual values on $M_n(K)$ is
+$\mathfrak{sl}_n(K)$ if its trace vanishes identically, and $M_n(K)$
+otherwise.  This includes arbitrary proper perturbations of
+$s_7,s_9,s_{11}$.  The proof combines exact standard-polynomial core
+constructions, additive size transfer, and a mixed-frame compatibility
+lemma with a local lifting criterion of Pan.
+\end{abstract}
+\maketitle
+
+\section{Introduction and statement}
+The L'vov--Kaplansky problem asks whether the set of values of an
+ordinary multilinear noncommutative polynomial on a full matrix
+algebra is always a vector subspace \cite{KBRY2020}.  We study a
+class determined by setting one designated variable equal to the
+identity.  Throughout, an image means the set of individual
+matrix evaluations, rather than its linear span or Zariski closure.
+
+Let $K$ be an algebraically closed field of characteristic zero.
+Write $M_n(K)$ for the algebra of $n\times n$ matrices over $K$,
+$\mathfrak{sl}_n(K)$ for its trace-zero subspace, and $\im_n f$
+for the image of a polynomial $f$ on $M_n(K)$.  For $d\ge1$ the
+unnormalised standard polynomial is
+\begin{equation}\label{eq:std}
+ s_d(X_1,\ldots,X_d)=\sum_{\sigma\in S_d}\operatorname{sgn}(\sigma)X_{\sigma(1)}\cdots X_{\sigma(d)}.
+\end{equation}
+A polynomial is \emph{ordinary multilinear} if every monomial
+contains each of its named variables exactly once.
+
+The hypothesis includes arbitrary proper perturbations of odd standard
+polynomials.  Here a multilinear polynomial is \emph{proper} if
+substituting the identity in any one of its variables gives the zero
+formal polynomial.  Nonproper perturbations are also permitted.
+
+Our proof uses geometric image methods developed by Tang
+\cite[Lemmas~2--3]{Tang2026} and Pan
+\cite[\S9.3, Corollary~9.7]{Pan2026}, alongside classical
+matrix-identity work \cite{AL1950,Leron1973,Rowen1974,Serre2016}.
+
+\Needspace{17\baselineskip}
+\begin{theorem}[Standard-unit restriction in three odd degrees]\label{thm:main}
+Let $K$ be algebraically closed of characteristic zero.  Let $r\in\{3,4,5\}$ and $n\ge r+1$, and let
+\[
+ f(Y,X_1,\ldots,X_{2r})\in K\langle Y,X_1,\ldots,X_{2r}\rangle
+\]
+be any ordinary multilinear polynomial.  Suppose that, as a formal polynomial,
+\begin{equation}\label{eq:unit}
+ f(I,X_1,\ldots,X_{2r})=\lambda s_{2r}(X_1,\ldots,X_{2r}),\qquad \lambda\in K^\times.
+\end{equation}
+Then
+\begin{equation}\label{eq:main}
+ \im_n f=\begin{cases}
+  \mathfrak{sl}_n(K),&\tr f(A)=0\text{ for every }A\in\Mat n^{\,2r+1},\\
+  M_n(K),&\tr f(A)\ne0\text{ for some }A\in\Mat n^{\,2r+1}.
+ \end{cases}
+\end{equation}
+These are degrees $7$, $9$ and $11$, with matrix orders $n\ge4$, $n\ge5$ and $n\ge6$, respectively.
+\end{theorem}
+
+The standard-polynomial classification \cite[Theorem~1.1]{Miah2026Standard}
+gives $\im_n s_{2r}=\mathfrak{sl}_n(K)$ in these ranges, yielding
+the trace-zero case by setting $Y=I$.  For a polynomial with nonzero
+trace, the main challenge is to find a regular rank-one square-zero
+value of $s_{2r}$ and a nonzero cyclic trace gradient at the same
+tuple of the remaining inputs.  Our mixed-frame lemma makes these
+conditions compatible, including at the sharp degree-$2N$ identity
+boundary.  Twelve exact core witnesses and additive size transfer
+produce the required regular standard-polynomial values.
+
+\section{Local actual-image lifting}\label{sec:local}
+
+
+\begin{lemma}[Rank-one nilpotent propagation; cf. Tang]\label{lem:propagate}
+Let $n\ge2$ and let $F$ be a polynomial map from an affine space into $V$, where $V$ is either $\mathfrak{sl}_n(K)$ or $M_n(K)$.  Suppose its image is stable under conjugation and nonzero scalar multiplication.  If $F(a)=R$ is nonzero, rank one and square zero, and $\dd F_a$ is surjective onto $V$, then the image of $F$ contains every nonscalar matrix in $V$.  If $V=\mathfrak{sl}_n(K)$ and $0$ also lies in the image, the image is all of $V$.
+\end{lemma}
+\begin{proof}
+Surjectivity of the differential between smooth affine varieties makes $F$ smooth at $a$, and its image contains a Zariski-open neighbourhood $U$ of $R$ (after restricting to a neighbourhood of $a$).  Given a nonscalar $T\in V$, choose a basis with $T_{12}\ne0$.  For
+$D(t)=\operatorname{diag}(t^{-1},t,1,\ldots,1)$ the matrix
+\[
+ t^2D(t)TD(t)^{-1}
+\]
+extends polynomially to $t=0$ and has value $T_{12}E_{12}$ there.  Conjugation and nonzero scaling identify this value with $R$.  The inverse image of the corresponding open neighbourhood of $R$ on the affine $t$-line contains $0$, hence also some $t\in K^\times$.  Stability under conjugation and scaling then puts $T$ in $\im F$.  In the traceless case the only scalar is $0$.
+\end{proof}
+
+\Needspace{9\baselineskip}
+\begin{lemma}[Scalar values; cf. Tang]\label{lem:scalar}
+If an ordinary multilinear polynomial $f$ has an evaluation of nonzero trace on $M_n(K)$, then $\im_n f$ contains every scalar matrix.
+\end{lemma}
+\begin{proof}
+Choose clock-and-shift matrices $U,V$ with $VU=\zeta UV$, where $\zeta$ is a primitive $n$th root of unity.  The $n^2$ matrices $U^aV^b$ ($0\le a,b<n$) form a basis of $M_n(K)$.  When each input of $f$ is chosen from this basis, all monomials in $f$ yield scalar multiples of the same invertible basis matrix, determined by the sums of the exponents.  Expanding a traceful evaluation multilinearly gives one such basis tuple with nonzero trace.  Its value is a nonzero scalar matrix, because a nontrivial clock-and-shift basis matrix has trace zero.  Scaling one input gives every scalar value, including zero.
+\end{proof}
+
+For an ordinary multilinear $f(Y,X_1,\ldots,X_m)$ define its \emph{cyclic $Y$-gradient} $H_f$ by rotating each word until $Y$ is first, then deleting $Y$ and summing its coefficient:
+\begin{equation}\label{eq:gradient}
+ \tr f(Z,A_1,\ldots,A_m)=\tr\bigl(ZH_f(A_1,\ldots,A_m)\bigr).
+\end{equation}
+The identity holds in every matrix order, with $H_f$ understood as a formal polynomial.
+
+\begin{proposition}[Singleton unit-deletion lifting; Pan]\label{prop:pan}
+Let $f(Y,X)$ be ordinary multilinear and put $g(X)=f(I,X)$.  Suppose $g$ is identically traceless on $M_n(K)$.  If there is one tuple $A$ for which
+\begin{equation}\label{eq:pan}
+ g(A)\ne0,\quad g(A)^2=0,\quad \operatorname{rank}g(A)=1,\quad
+ \im\dd g_A=\mathfrak{sl}_n(K),\quad H_f(A)\ne0,
+\end{equation}
+then $\im_n f=M_n(K)$.
+\end{proposition}
+\begin{proof}
+This is the singleton-active-slot case of \cite[Corollary~9.7]{Pan2026}.  Indeed, at $(Y,X)=(I,A)$ the $X$-input derivatives span $\mathfrak{sl}_n(K)$ and the $Y$ derivative has nonzero trace by \eqref{eq:gradient}.  Thus the full differential of $f$ is onto $M_n(K)$ at the rank-one square-zero value $g(A)$.  Lemma~\ref{lem:propagate} yields every nonscalar and Lemma~\ref{lem:scalar} yields every scalar.
+\end{proof}
+
+\section{Regular standard frames and size transfer}\label{sec:cores}
+Fix an even integer $m=2r$, write $k=m-1$ and $N\ge r$.  For $B=(B_1,\ldots,B_k)\in M_N(K)^k$ and $u\in K^N$ define
+\[
+ S_B=s_k(B_1,\ldots,B_k),\qquad L_B(P)=s_m(B_1,\ldots,B_k,P),
+\]
+\[
+ C_{i,B}(P)=s_k(B_1,\ldots,B_{i-1},P,B_{i+1},\ldots,B_k),
+ \quad(1\le i\le k),
+\]
+and the linear map
+\begin{equation}\label{eq:gamma}
+\begin{aligned}
+ \Gamma_{B,u}:M_N(K)&\longrightarrow M_N(K)\oplus(K^N)^k,\\
+ P&\longmapsto\bigl(L_B(P),C_{1,B}(P)u,\ldots,C_{k,B}(P)u\bigr).
+\end{aligned}
+\end{equation}
+\par\Needspace{7\baselineskip}
+\begin{samepage}
+\noindent Call $N$ \emph{admissible for $s_m$} if some pair $(B,u)$ has
+$\det S_B\ne0$ and $\Gamma_{B,u}$ injective.  Such pairs form a
+nonempty Zariski-open set whenever one exists.
+\end{samepage}
+
+\begin{lemma}[Border-core regularity]\label{lem:core}
+If $N$ is admissible for $s_m$, the tuple
+\begin{equation}\label{eq:frame}
+ A_i=\begin{pmatrix}B_i&0\\0&0\end{pmatrix}\ (1\le i\le k),\qquad
+ A_m=\begin{pmatrix}0&u\\0&0\end{pmatrix}\quad \text{in }M_{N+1}(K)
+\end{equation}
+has $s_m(A)$ nonzero, rank one and square zero.  Moreover, $\dd(s_m)_A$ is onto $\mathfrak{sl}_{N+1}(K)$.
+\end{lemma}
+\begin{proof}
+Only terms with $A_m$ last survive in $s_m(A)$, giving
+\begin{equation}\label{eq:val}
+ s_m(A)=\begin{pmatrix}0&S_Bu\\0&0\end{pmatrix}.
+\end{equation}
+The injectivity of $\Gamma_{B,u}$ implies $u\ne0$: if $u=0$, then $I_N$ is in the kernel since $s_m(B,I_N)=0$ for even $m$.  Invertibility of $S_B$ therefore makes \eqref{eq:val} nonzero.
+
+For completeness, consider the annihilator of the full original-input differential under the trace pairing.  Variations of the last input in the upper-right and lower-left rectangles give respectively $v\mapsto S_Bv$ and $c\mapsto -cS_B$.  Since $S_B$ is invertible, every annihilator is block diagonal.  Modulo the scalar identity it can be written $\operatorname{diag}(P,0)$.  The upper-left variation of the last input gives $L_B(Z)$; its trace adjoint is $-L_B$, because the alternating trace in $m+1$ slots is unchanged by cyclic rotation (as $m+1$ is odd) and changes sign when the two tested slots are transposed.  Hence its annihilator equation is $L_B(P)=0$.
+
+A lower-left variation $\left(\begin{smallmatrix}0&0\\c&0\end{smallmatrix}\right)$ of $A_i$ contributes to the upper-left output only when this varied letter immediately follows $A_m$ in a word.  Cyclically rotating the remaining alternating word shows that its trace pairing with $\operatorname{diag}(P,0)$ is $-cC_{i,B}(P)u$.  All remaining original-input variations contribute only to already eliminated border directions or zero.  Thus the complete normalized normal equations are exactly $\Gamma_{B,u}(P)=0$.  Injectivity makes the annihilator modulo scalars zero, as required.  Even standard-polynomial evaluations are traceless by cyclic antisymmetry.
+\end{proof}
+
+The additive transfer below uses the standard-polynomial core construction of \cite{Miah2026Standard}.
+
+\begin{lemma}[Fixed-polynomial additive transfer]\label{lem:additive}
+For a fixed even standard polynomial $s_m$ and the same free last slot in \eqref{eq:gamma}, admissible core sizes are closed under addition.
+\end{lemma}
+\begin{proof}
+Let $(B,u_B)$ and $(D,u_D)$ be admissible cores of sizes $a,b$.  For a single scalar parameter $t$ set
+\[
+ C_i(t)=\operatorname{diag}(B_i,tD_i)\ (1\le i\le k),\qquad
+ u=\binom{u_B}{u_D}.
+\]
+The endpoint is $s_k(C(t))=\operatorname{diag}(S_B,t^kS_D)$, invertible for $t\ne0$.  The map $L_{C(t)}:P\mapsto s_m(C_1(t),\ldots,C_k(t),P)$ preserves each of the four matrix-block subspaces of $M_{a+b}(K)$.\par\Needspace{6\baselineskip}
+At $t=0$ it acts on the upper mixed rectangle by $W\mapsto S_BW$, and on the lower mixed rectangle by $W\mapsto -WS_B$: all other word positions of the free input carry a vanishing $D$-block factor.  Both mixed-block determinants are therefore nonzero polynomials in $t$.
+
+Choose one $t\in K^\times$ avoiding their roots.  If $\Gamma_{C(t),u}(P)=0$, then $L_{C(t)}(P)=0$ first forces both off-diagonal blocks of $P$ to vanish.  For $P=\operatorname{diag}(P_a,P_b)$, the remaining equations are the two original core systems, with the second block multiplied by nonzero powers $t^k$ or $t^{k-1}$.  Their injectivity gives $P_a=P_b=0$.  The construction preserves the fixed polynomial and its free slot and uses the same parameter $t$ for every block.
+\end{proof}
+
+\begin{proposition}[Twelve finite cores and all larger sizes]\label{prop:12}
+For $r=3,4,5$, each size $N=r,r+1,\ldots,2r-1$ is admissible for $s_{2r}$.  Consequently every $N\ge r$ is admissible, and every $n\ge r+1$ has a tuple $A\in M_n(K)^{2r}$ satisfying the regularity conditions in Lemma~\ref{lem:core}.
+\end{proposition}
+\begin{proof}
+The finite assertion uses the twelve explicit integer pairs $(B,u)$ in \path{certificates/standard_cores.json}.  The verifier and its modular results are described in Appendix~\ref{app:finite}.  At each of the twelve inputs, the integer endpoint $S_B$ has nonzero determinant modulo $101$ and $103$; $\Gamma_{B,u}$ has rank $N^2$ over each of these finite fields, as computed by a signed-subset recurrence and insertion operator.  In particular some integer maximal minor is nonzero, and both conditions hold over every characteristic-zero field.  Table~\ref{tab:cores} records the exact cases and ranks.  Every integer $N\ge r$ is a sum of integers in $[r,2r-1]$: use the listed cases initially, then subtract $r$ inductively.  Apply Lemma~\ref{lem:additive}, followed by Lemma~\ref{lem:core}.
+\end{proof}
+
+\section{Detection on mixed frames}\label{sec:mixed}
+A nonzero trace gradient must be detected on the \emph{same} regular family as the standard value.  The following lemma applies even at the first nonidentity order, where degree $2N$ polynomial identities exist.
+
+For the tuple in \eqref{eq:frame} and $T=(t_{ij})\in M_m(K)$ write
+\[
+ (T\cdot A)_i=\sum_{j=1}^m t_{ij}A_j\qquad(1\le i\le m).
+\]
+\Needspace{12\baselineskip}
+\begin{lemma}[Mixed-standard-frame detection]\label{lem:mixed}
+Let $m=2r$, $N\ge r$ and $H\in K\langle X_1,\ldots,X_m\rangle$ be a nonzero ordinary multilinear polynomial.  As the $B_i$, $u$ and $T$ vary, $H(T\cdot A(B,u))$ is not identically zero.  Moreover, it is nonzero for some choice with $T\in\operatorname{GL}_m(K)$; its nonvanishing defines a nonempty open condition on the irreducible parameter space of $B,u,T$.
+\end{lemma}
+\begin{proof}
+Suppose first that identifying any two inputs of $H$ makes the resulting polynomial zero.  Polarizing each equality of two inputs in characteristic zero shows that $H$ changes sign under each transposition.  Hence $H=\alpha s_m$ for some $\alpha\ne0$.  There is a frame of the form \eqref{eq:frame} with $s_m(A)\ne0$: take $B$ to consist, in a suitable order, of $E_{00}$ and the pairs $E_{0j},E_{j0}$ for $1\le j\le r-1$, embedded in the first $N$ coordinates, and take $u=e_0$.  In the alternating evaluation, the loop and $r-1$ two-edge excursions can be ordered in $r!$ ways before the final exit $E_{0,N}$; all have the same sign.  Thus $s_m(A)=\pm r!E_{0,N}\ne0$.
+
+Otherwise identifying some pair of inputs gives a nonzero polynomial $h$ in $m-1$ independent variables, one occurring twice.  It is not a polynomial identity of $M_N(K)$.  If $m<2N$, this follows from the minimal-degree bound for matrix polynomial identities \cite{AL1950}.  At the boundary $m=2N$, polarize the repeated variable in $h$.  The resulting nonzero multilinear polynomial $\widetilde h$ has degree $2N$ and is symmetric in its two polarized positions; nonzeroness follows by specializing those positions back to the same variable, which gives $2h$.  The \emph{entire} degree-$2N$ multilinear identity space is the line $Ks_{2N}$ (the classical sharp fact recorded in \cite[pp.~175--176]{Leron1973}).  If $\widetilde h$ were an identity, it would therefore be alternating in those two positions, contradicting its nonzero symmetry.  Thus $h$ is nonzero at some tuple in $M_N(K)^{m-1}$.
+
+Choose $B_1,\ldots,B_{m-1}$ detecting $h$.  A possibly singular mixing matrix $T_0$ can select those $m-1$ old-block matrices, repeating the chosen identified input in the two specified slots.  Then
+\[
+ H(T_0\cdot A(B,u))=\operatorname{diag}(h(B),0)\ne0.
+\]
+Therefore at least one matrix entry of $H(T\cdot A(B,u))$ is a nonzero polynomial in all entries of $B,u,T$.  Its product with $\det T$ remains nonzero in the polynomial ring; an evaluation with both factors nonzero exists because $K$ is infinite.  The same argument proves nonemptiness of the corresponding open set.
+\end{proof}
+
+\begin{proposition}[Simultaneous regularity and trace-gradient detection]\label{prop:compat}
+If $N$ is admissible for $s_m$ and $H$ is any nonzero ordinary multilinear polynomial of degree $m=2r$, there is a \emph{single} tuple $A'\in M_{N+1}(K)^m$ for which
+\begin{equation}\label{eq:triple}
+\begin{aligned}
+ &s_m(A')\ne0,\qquad s_m(A')^2=0,\qquad
+ \operatorname{rank}s_m(A')=1,\\
+ &\im\dd(s_m)_{A'}=\mathfrak{sl}_{N+1}(K),\qquad H(A')\ne0.
+\end{aligned}
+\end{equation}
+\end{proposition}
+\Needspace{10\baselineskip}
+\begin{proof}
+Select one nonzero $N^2$-minor of $\Gamma_{B,u}$ and multiply it by $\det S_B$, obtaining a polynomial $\Delta(B,u)$ which is not identically zero.  Lemma~\ref{lem:mixed} gives a nonzero coordinate polynomial $q(B,u,T)$ of $H(T\cdot A(B,u))$.\par\Needspace{8\baselineskip}
+The product
+\[
+ \Delta(B,u)\,(\det T)\,q(B,u,T)
+\]
+is nonzero in the coordinate ring of an affine space.  Choose $B,u,T$ where it does not vanish, and set $A'=T\cdot A(B,u)$.  Lemma~\ref{lem:core} gives a regular rank-one square-zero value at $A$, and alternation yields
+\[
+ s_m(T\cdot A)=\det(T)s_m(A),\qquad
+ \dd(s_m)_{T\cdot A}\circ T=\det(T)\,\dd(s_m)_A,
+\]
+where the second equality regards $T$ as the invertible linear change of the full tuple of $X$-inputs.  Hence value and full differential regularity survive the mixing, while $H(A')\ne0$ by construction.
+\end{proof}
+
+\section{Proof of the image theorem}\label{sec:mainproof}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Put $m=2r$.  The standard polynomial $s_m$ has identically zero trace.  If every value of $f$ is traceless, substituting $Y=I$ gives
+$\im_n f\supseteq\lambda\im_n s_m=\mathfrak{sl}_n(K)$ by
+\cite[Theorem~1.1]{Miah2026Standard}; the reverse inclusion is immediate.
+
+Now suppose that $f$ has a value of nonzero trace.  Its cyclic
+$Y$-gradient $H_f$ is a nonzero formal multilinear polynomial.  Since
+$m=2r<2n$, the minimal identity-degree bound shows that formal and
+evaluated trace vanishing agree in this range.
+
+With $N=n-1\ge r$, Proposition~\ref{prop:12} gives admissibility, and
+Proposition~\ref{prop:compat} supplies a tuple $A'$ satisfying
+\eqref{eq:triple} for $H_f$.  At $Y=I$, the unit restriction gives
+\[
+ f(I,A')=\lambda s_m(A'),\qquad
+ \dd_Xf\big|_{(I,A')}=\lambda\dd(s_m)_{A'}.
+\]
+The $Y$-direction has nonzero trace because $H_f(A')\ne0$.
+Proposition~\ref{prop:pan}, with $g=\lambda s_m$, yields
+$\im_n f=M_n(K)$.
+\end{proof}
+
+\begin{corollary}[Proper odd-standard perturbations]\label{cor:proper}
+For $r\in\{3,4,5\}$, $n\ge r+1$, $\lambda\ne0$, and any proper ordinary multilinear polynomial $h$ of degree $2r+1$, one has
+\[
+ \im_n(\lambda s_{2r+1}+h)=M_n(K).
+\]
+\end{corollary}
+\begin{proof}
+Put $m=2r$ and let $H$ be the cyclic $Y$-gradient of $\lambda s_{m+1}+h$.  Properness gives $(\lambda s_{m+1}+h)(I,X)=\lambda s_m(X)$ and forces the alternating component of $h$ to vanish: a nonzero alternating component would be a multiple of $s_{m+1}$, whose unit specialization is $s_m\ne0$.  Since $m+1$ is odd, cyclic rotation preserves alternating signs, giving
+\begin{equation}\label{eq:properalt}
+ \sum_{\pi\in S_m}\operatorname{sgn}(\pi)H(A_{\pi(1)},\ldots,A_{\pi(m)})
+ =(m+1)m!\lambda s_m(A).
+\end{equation}
+At a nonzero standard frame from Proposition~\ref{prop:12}, the right side is nonzero.  Thus at least one permuted tuple detects the gradient, and the evaluated trace is not identically zero.  Theorem~\ref{thm:main} applies.  
+\end{proof}
+
+\section*{Use of AI}
+OpenAI's GPT-6 Pro contributed substantially to the mathematical investigation, development of proofs, computational verification, literature review, and drafting of this manuscript.  The author is responsible for its mathematical claims and final presentation.
+
+\appendix
+\section{Exact finite core checks}\label{app:finite}
+The finite part of Proposition~\ref{prop:12} consists of $3+4+5=12$ pairs $(r,N)$, shown in Table~\ref{tab:cores}.  The file \path{certificates/standard_cores.json} lists the twelve integer inputs $B_1,\ldots,B_{2r-1},u$.  The accompanying verifier forms $S_B$ by a signed-subset recurrence and forms the columns of $\Gamma_{B,u}$ by a signed insertion formula, both reduced modulo each of $101$ and $103$.  It tests the nonzero endpoint determinant and full rank $N^2$ and records explicit pivot-row minor residues in \texttt{standard\_core\_checks.json} under \texttt{certificates/}.  As all input entries and the defining polynomials are integers, these nonzero residues imply nonzero integer determinants and a nonzero integral maximal minor.  The argument for arbitrary $N\ge r$ is Lemma~\ref{lem:additive}, not a further finite scan.
+
+\begin{table}[htbp]
+\centering
+\caption{All certified base sizes; each rank is attained modulo both $101$ and $103$.}\label{tab:cores}
+\begin{tabular}{@{}c c c c@{}}\toprule
+$r$ & standard polynomial & core sizes $N$ & ranks $\operatorname{rank}\Gamma_{B,u}=N^2$\\\midrule
+$3$ & $s_6$ & $3,4,5$ & $9,16,25$\\
+$4$ & $s_8$ & $4,5,6,7$ & $16,25,36,49$\\
+$5$ & $s_{10}$ & $5,6,7,8,9$ & $25,36,49,64,81$\\\bottomrule
+\end{tabular}
+\end{table}
+
+To reproduce the finite checks, use Python 3.11 or later and NumPy 1.26 or later (below 3), as specified in \path{requirements.txt}. From the source directory, run
+\begin{center}
+\texttt{python code/verify\_standard\_cores.py}
+\end{center}
+The script checks exact coverage of the twelve prescribed pairs, computes the modular minors, raises an error on failure, and regenerates the result JSON.
+
+\Needspace{17\baselineskip}
+\bibliographystyle{amsplain}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,19 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# LaTeX working files (canonical main.pdf and main.bbl are intentionally retained)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+
+# Python caches
+__pycache__/
+*.py[cod]
