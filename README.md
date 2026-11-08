@@ -6,13 +6,17 @@
 
 ## About
 
-This preprint studies the sets of individual matrix values of ordinary multilinear polynomials whose specialization at a designated unit input is a standard polynomial. For $r\in\{3,4,5\}$, suppose that
+
+This preprint studies the sets of individual matrix values of ordinary multilinear polynomials whose specialization at a designated unit input is a standard polynomial. For $`r\in\{3,4,5\}`$, suppose that
+
 
 $$
 f(I,X_1,\ldots,X_{2r})=\lambda s_{2r}(X_1,\ldots,X_{2r}),\qquad \lambda\ne 0
 $$
 
-as a formal polynomial. Over an algebraically closed field $K$ of characteristic zero, for every $n\ge r+1$ the full single-evaluation image of $f$ on $M_n(K)$ is $\mathfrak{sl}_n(K)$ when its trace vanishes identically, and $M_n(K)$ otherwise. The theorem applies in degrees 7, 9 and 11, including arbitrary proper perturbations of $s_7$, $s_9$ and $s_{11}$.
+
+as a formal polynomial. Over an algebraically closed field $`K`$ of characteristic zero, for every $`n\ge r+1`$ the full single-evaluation image of $`f`$ on $`M_n(K)`$ is $`\mathfrak{sl}_n(K)`$ when its trace vanishes identically, and $`M_n(K)`$ otherwise. The theorem applies in degrees 7, 9 and 11, including arbitrary proper perturbations of $`s_7`$, $`s_9`$ and $`s_{11}`$.
+
 
 The argument builds on the standard-polynomial image classification in Miah's [*The L’vov–Kaplansky Conjecture for Standard Polynomials*](https://hexagonmath.org/2611.00184v1), together with geometric image methods of Tang and Pan. Twelve exact standard-polynomial cores, additive size transfer and a mixed-frame compatibility argument provide the further ingredients.
 
